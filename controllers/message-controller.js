@@ -6,7 +6,6 @@ var MessageController = function(){
   var self = this;
 
   self.create = function(req, res) {
-    console.log("BODY", req.rawBody);
     var mg = new Mailgun(config.mailgun.apiKey);
     var from = req.body.flowId + '@webhook.octoblu.com';
     var to = req.body.to;
