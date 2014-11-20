@@ -10,8 +10,9 @@ bodyParser     = require('body-parser'),
 config         = require('./config/config'),
 skynet         = require('skynet'),
 errorHandler   = require('errorhandler');
+_              = require('lodash');
 
-var meshblu    = skynet.createConnection(config.meshblu);
+var meshblu    = skynet.createConnection(_.clone(config.meshblu));
 var meshbluAuth = require('./middleware/meshblu-auth');
 
 app = express();

@@ -1,6 +1,6 @@
 var Mailgun = require('mailgun').Mailgun;
-var config = require('../config/config');
-var _ = require('lodash');
+var config  = require('../config/config');
+var _       = require('lodash');
 
 var MessageController = function(){
   var self = this;
