@@ -8,11 +8,11 @@ methodOverride = require('method-override'),
 session        = require('express-session'),
 bodyParser     = require('body-parser'),
 config         = require('./config/config'),
-skynet         = require('skynet'),
+meshblu        = require('meshblu'),
 errorHandler   = require('errorhandler');
 _              = require('lodash');
 
-var meshblu    = skynet.createConnection(_.clone(config.meshblu));
+var meshblu    = meshblu.createConnection(_.clone(config.meshblu));
 var meshbluAuth = require('./middleware/meshblu-auth');
 
 app = express();
