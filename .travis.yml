@@ -6,13 +6,15 @@ cache:
   bundler: true
   directories:
   - node_modules
-env: NODE_ENV=test
+env:
+  matrix:
+  - NODE_ENV=test
 branches:
   only:
   - master
 deploy:
   provider: opsworks
-  access_key_id: AKIAIT4X4NDGM2WVL6VA
+  access_key_id: AKIAJH2D5IPIRHYJT5IA
   secret_access_key:
-    secure: AtQMJ/oE1VxvdRL7jGxDvhP8DEucW/5u0YJdEJAV07oe2U1tGQClaswuC/RfJZUN5IoHS2JgjlsL4Jk2fUQDO4nCuJdkbyd0TwRtvuh7D56bnkvPv9V1BfuJWwZZrXvdd4+p6weVOSGvDtxACFLrO0xwduA7/6uRy+70Xs0deAE=
+    secure: wJ4kJGhQDPcQnqJqn6v1yWU8FH6nllc/631cKjyHTXPJUvbjL1JYyQdAd54Dz7PGfrVdQzpAvpqjwiQg2ahAzrBvjYF+49ei6xtHzhsDyXn56dI9YyP0hTu4j7hMdSTIHayHUks4h/G7T+uU5dxr9SnsTOCXRwcpIs3aows3jVA=
   app-id: dc34c05f-6cd6-4b9d-b4b0-916e02035ba9
