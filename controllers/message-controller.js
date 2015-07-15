@@ -7,7 +7,7 @@ var MessageController = function(){
 
   self.create = function(req, res) {
     var mg = new Mailgun(config.mailgun.apiKey);
-    var from = req.body.flowId + '@webhook.octoblu.com';
+    var from = 'octoblu-flow@webhook.octoblu.com';
     var to = req.body.to;
     var subject = req.body.subject;
     var body = req.body.body;
@@ -22,4 +22,3 @@ var MessageController = function(){
   }
 }
 module.exports = MessageController;
-
