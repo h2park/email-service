@@ -12,7 +12,7 @@ errorHandler   = require('errorhandler');
 _              = require('lodash');
 
 app = express();
-app.set('port', process.env.EMAIL_PORT || process.env.PORT || 9011);
+app.set('port', process.env.EMAIL_PORT || process.env.PORT || 80);
 app.use(session({resave: true, saveUninitialized: true, secret: 'sqrt0fSaturn'}));
 app.use(morgan('dev'));
 app.use(methodOverride());

@@ -1,7 +1,7 @@
 {
-  "name": "sms-service",
+  "name": "email-service",
   "version": "1.0.0",
-  "description": "Rest Service for Octoblu SMS messages",
+  "description": "Rest Service for Octoblu Email messages",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
@@ -18,9 +18,9 @@
   "author": "Octoblu Inc",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/octoblu/sms-service/issues"
+    "url": "https://github.com/octoblu/email-service/issues"
   },
-  "homepage": "https://github.com/octoblu/sms-service",
+  "homepage": "https://github.com/octoblu/email-service",
   "dependencies": {
     "basic-auth": "^1.0.0",
     "body": "^4.5.0",
