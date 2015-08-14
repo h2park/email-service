@@ -14,7 +14,7 @@ _              = require('lodash');
 app = express();
 app.set('port', process.env.EMAIL_PORT || process.env.PORT || 80);
 app.use(session({resave: true, saveUninitialized: true, secret: 'sqrt0fSaturn'}));
-app.use(morgan('dev'));
+app.use(morgan('dev', { skip: function(req, res){ return res.statusCode < 400 }}));
 app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
