@@ -11,6 +11,13 @@ var MessageController = function(){
     var to = req.body.to;
     var subject = req.body.subject;
     var body = req.body.body;
+
+
+    if (!to) {
+      res.send(422, {error: "to field is required"});
+      return;
+    }
+
     mg.sendText(from, to, subject, body, function(err) {
       if (err) {
         console.error(err.message, err.stack);
