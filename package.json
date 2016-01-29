@@ -1,6 +1,6 @@
 {
   "name": "email-service",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Rest Service for Octoblu Email messages",
   "main": "server.js",
   "scripts": {
