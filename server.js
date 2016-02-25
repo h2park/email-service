@@ -11,17 +11,17 @@ config         = require('./config/config'),
 errorHandler   = require('errorhandler');
 _              = require('lodash');
 
+var meshbluHealthcheck = require('express-meshblu-healthcheck');
+
 app = express();
 app.set('port', process.env.EMAIL_PORT || process.env.PORT || 80);
+app.use(meshbluHealthcheck());
 app.use(session({resave: true, saveUninitialized: true, secret: 'sqrt0fSaturn'}));
 app.use(morgan('dev', { skip: function(req, res){ return res.statusCode < 400 }}));
 app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(errorHandler());
-
-var meshbluHealthcheck = require('express-meshblu-healthcheck');
-app.use(meshbluHealthcheck());
 
 var meshbluAuth = require('express-meshblu-auth');
 app.use(meshbluAuth({
@@ -40,4 +40,9 @@ app.post('/messages', messageController.create);
 
 app.listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));
+});
+
+process.on('SIGTERM', function(){
+  console.log('SIGTERM caught, exiting');
+  process.exit(0);
 });
